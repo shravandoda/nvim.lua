@@ -7,8 +7,9 @@
 
 --------------------------------------------------
 
--- Import configurations
-require 'config.options'
-require 'config.keymaps'
-require 'config.autocmds'
-require 'config.lazy'
+----------------------------------------------------------------------
+-- AUTOINDENT
+----------------------------------------------------------------------
+
+return { 'NMAC427/guess-indent.nvim' }
+
