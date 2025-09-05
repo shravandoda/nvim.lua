@@ -44,11 +44,12 @@ return {
         end
       end,
       formatters_by_ft = {
+        json = { 'jsonls' },
         lua = { 'stylua' },
         -- Conform can also run multiple formatters sequentially
-        -- python = { "ruff", "isort"},
-        --
-        -- You can use 'stop_after_first' to run the first available formatter from the list
+        python = { 'ruff' },
+        terraform = { 'terraform-ls' },
+        docker = { 'docker-language-server' },
         -- javascript = { "prettierd", "prettier", stop_after_first = true },
       },
     },

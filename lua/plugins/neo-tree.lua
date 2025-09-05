@@ -30,6 +30,10 @@ return {
           ['\\'] = 'close_window',
         },
       },
+      filtered_items = {
+        hide_dotfiles = false,
+        visible = true,
+      },
     },
   },
 }

@@ -12,32 +12,24 @@
 ----------------------------------------------------------------------
 
 return {
-  { -- You can easily change to a different colorscheme.
-    -- Change the name of the colorscheme plugin below, and then
-    -- change the command in the config to whatever the name of that colorscheme is.
-    --
-    -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
+  {
     'rebelot/kanagawa.nvim',
-    priority = 1000, -- Make sure to load this before all the other start plugins.
+    lazy = false,
+    priority = 1000,
     config = function()
       require('kanagawa').setup {
-        compile = true, -- enable compiling the colorscheme
-        undercurl = true, -- enable undercurls
+        compile = true,
+        undercurl = true,
         commentStyle = { italic = true },
-        functionStyle = { italic = true },
-        keywordStyle = { italic = true },
+        keywordStyle = { bold = true },
         statementStyle = { bold = true },
-        typeStyle = {},
-        transparent = false, -- do not set background color
-        dimInactive = false, -- dim inactive window `:h hl-NormalNC`
-        terminalColors = true, -- define vim.g.terminal_color_{0,17}
-        colors = { -- add/modify theme and palette colors
-          palette = {},
-          theme = { wave = {}, lotus = {}, dragon = {}, all = {} },
+        theme = 'wave',
+        terminalColors = true,
+        background = {
+          dark = 'dragon',
         },
-        theme = 'dragon',
       }
-      vim.cmd.colorscheme 'kanagawa-dragon'
+      vim.cmd 'colorscheme kanagawa'
     end,
   },
 
