@@ -71,3 +71,5 @@ end
 
 -- Key mapping to toggle the floating terminal
 vim.keymap.set('n', '<leader>tt', toggle_floaterm, { desc = '[T]oggle [T]erminal' })
+
+return {}
