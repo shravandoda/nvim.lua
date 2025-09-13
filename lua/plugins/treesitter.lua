@@ -7,18 +7,18 @@
 
 --------------------------------------------------
 
-----------------------------------------------------------------------
--- Treesitter
-----------------------------------------------------------------------
-
 return {
+  ----------------------------------------------------------------------
+  -- Treesitter
+  ----------------------------------------------------------------------
+
   {
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
     main = 'nvim-treesitter.configs', -- Sets main module to use for opts
     -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
     opts = {
-      ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc' },
+      ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'python', 'terraform', 'query' },
       -- Autoinstall languages that are not installed
       auto_install = true,
       highlight = {
@@ -36,5 +36,32 @@ return {
     --    - Incremental selection: Included, see `:help nvim-treesitter-incremental-selection-mod`
     --    - Show your current context: https://github.com/nvim-treesitter/nvim-treesitter-context
     --    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
+  },
+
+  ----------------------------------------------------------------------
+  --- Aerial - Code Outline
+  ----------------------------------------------------------------------
+
+  {
+    {
+      'stevearc/aerial.nvim',
+      opts = {},
+      dependencies = {
+        'nvim-treesitter/nvim-treesitter',
+        'nvim-tree/nvim-web-devicons',
+      },
+      config = function()
+        require('aerial').setup {
+          backends = { 'treesitter', 'lsp', 'markdown' },
+          on_attach = function(bufnr)
+            vim.keymap.set('n', '{', '<cmd>AerialPrev<CR>', { buffer = bufnr, desc = 'Aerial Prev' })
+            vim.keymap.set('n', '}', '<cmd>AerialNext<CR>', { buffer = bufnr, desc = 'Aerial Next' })
+            vim.keymap.set('n', '[[', '<cmd>AerialPrevUp<CR>', { buffer = bufnr, desc = 'Aerial Prev Up' })
+            vim.keymap.set('n', ']]', '<cmd>AerialNextUp<CR>', { buffer = bufnr, desc = 'Aerial Next Up' })
+          end,
+        }
+        vim.keymap.set('n', '<leader>A', '<cmd>AerialToggle!<CR>', { desc = '[A]erial Toggle' })
+      end,
+    },
   },
 }
