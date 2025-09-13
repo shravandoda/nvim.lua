@@ -52,7 +52,7 @@ return {
       },
       config = function()
         require('aerial').setup {
-          backends = { 'treesitter', 'lsp', 'markdown' },
+          backends = { 'lsp', 'treesitter', 'markdown' },
           on_attach = function(bufnr)
             vim.keymap.set('n', '{', '<cmd>AerialPrev<CR>', { buffer = bufnr, desc = 'Aerial Prev' })
             vim.keymap.set('n', '}', '<cmd>AerialNext<CR>', { buffer = bufnr, desc = 'Aerial Next' })

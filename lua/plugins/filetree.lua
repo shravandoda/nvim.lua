@@ -21,7 +21,7 @@ return {
     lazy = false,
     config = function()
       require('oil').setup {
-        default_file_explorer = true,
+        default_file_explorer = false,
         delete_to_trash = true,
         skip_confirm_for_simple_edits = true,
         view_options = {
@@ -43,5 +43,27 @@ return {
       }
       vim.keymap.set('n', '-', '<cmd>Oil --float<CR>', { desc = 'Open parent directory' })
     end,
+  },
+  {
+    'nvim-neo-tree/neo-tree.nvim',
+    version = '*',
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      'nvim-tree/nvim-web-devicons', -- not strictly required, but recommended
+      'MunifTanjim/nui.nvim',
+    },
+    lazy = false,
+    keys = {
+      { '<leader>e', ':Neotree reveal<CR>', desc = 'File [E]xplorer', silent = true },
+    },
+    opts = {
+      filesystem = {
+        window = {
+          mappings = {
+            ['<leader>e'] = 'close_window',
+          },
+        },
+      },
+    },
   },
 }
