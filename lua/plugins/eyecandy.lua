@@ -49,7 +49,7 @@ return {
   --       commentStyle = { italic = true },
   --       keywordStyle = { bold = true },
   --       statementStyle = { bold = true },
-  --       theme = 'waves',
+  --       theme = 'dragon',
   --       terminalColors = true,
   --       background = {
   --         dark = 'dragon',
@@ -114,18 +114,39 @@ return {
   --------------------------------------------------------------------
   --- Ayu Theme
   --------------------------------------------------------------------
+  -- {
+  --   'Shatur/neovim-ayu',
+  --   lazy = false,
+  --   priority = 1000,
+  --   config = function()
+  --     require('ayu').setup {
+  --       mirage = true,
+  --       terminal = true,
+  --       comments = true,
+  --       functions = true,
+  --     }
+  --     vim.cmd.colorscheme 'ayu'
+  --   end,
+  -- },
+
+  -------------------------------------------------------------------
+  --- Gruvbox Material Theme
+  -------------------------------------------------------------------
   {
-    'Shatur/neovim-ayu',
+    'sainnhe/gruvbox-material',
     lazy = false,
     priority = 1000,
     config = function()
-      require('ayu').setup {
-        mirage = true,
-        terminal = true,
-        comments = true,
-        functions = true,
-      }
-      vim.cmd.colorscheme 'ayu'
+      vim.g.gruvbox_material_background = 'medium'
+      vim.g.gruvbox_material_foreground = 'mix'
+      vim.g.gruvbox_material_transparent_background = 1
+      vim.g.gruvbox_material_better_performance = 1
+      vim.g.gruvbox_material_enable_bold = 1
+      vim.g.gruvbox_material_enable_italic = 1
+      vim.g.gruvbox_material_cursor = 'red'
+      vim.g.gruvbox_material_ui_contrast = 'high'
+
+      vim.cmd.colorscheme 'gruvbox-material'
     end,
   },
 
@@ -145,6 +166,9 @@ return {
       config = function()
         require('no-neck-pain').setup {
           width = 170,
+          autocmds = {
+            enableOnVimEnter = true,
+          },
         }
       end,
 

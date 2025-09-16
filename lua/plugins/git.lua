@@ -32,5 +32,6 @@ return {
       }
     end,
     vim.keymap.set('n', '<leader>gb', ':Gitsigns toggle_current_line_blame<CR>', { desc = 'Toggle [G]it [B]lame' }),
+    vim.keymap.set('n', '<leader>gh', ':Gitsigns preview_hunk_inline<CR>', { desc = 'Toggle [G]it [H]unk' }),
   },
 }

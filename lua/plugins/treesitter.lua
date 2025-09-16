@@ -43,25 +43,25 @@ return {
   ----------------------------------------------------------------------
 
   {
-    {
-      'stevearc/aerial.nvim',
-      opts = {},
-      dependencies = {
-        'nvim-treesitter/nvim-treesitter',
-        'nvim-tree/nvim-web-devicons',
-      },
-      config = function()
-        require('aerial').setup {
-          backends = { 'lsp', 'treesitter', 'markdown' },
-          on_attach = function(bufnr)
-            vim.keymap.set('n', '{', '<cmd>AerialPrev<CR>', { buffer = bufnr, desc = 'Aerial Prev' })
-            vim.keymap.set('n', '}', '<cmd>AerialNext<CR>', { buffer = bufnr, desc = 'Aerial Next' })
-            vim.keymap.set('n', '[[', '<cmd>AerialPrevUp<CR>', { buffer = bufnr, desc = 'Aerial Prev Up' })
-            vim.keymap.set('n', ']]', '<cmd>AerialNextUp<CR>', { buffer = bufnr, desc = 'Aerial Next Up' })
-          end,
-        }
-        vim.keymap.set('n', '<leader>A', '<cmd>AerialToggle!<CR>', { desc = '[A]erial Toggle' })
-      end,
+    'stevearc/aerial.nvim',
+    opts = {},
+    dependencies = {
+      'nvim-treesitter/nvim-treesitter',
+      'nvim-tree/nvim-web-devicons',
     },
+    config = function()
+      require('aerial').setup {
+        backends = { 'lsp', 'treesitter', 'markdown' },
+        on_attach = function(bufnr)
+          vim.keymap.set('n', '{', '<cmd>AerialPrev<CR>', { buffer = bufnr, desc = 'Aerial Prev' })
+          vim.keymap.set('n', '}', '<cmd>AerialNext<CR>', { buffer = bufnr, desc = 'Aerial Next' })
+          vim.keymap.set('n', '[[', '<cmd>AerialPrevUp<CR>', { buffer = bufnr, desc = 'Aerial Prev Up' })
+          vim.keymap.set('n', ']]', '<cmd>AerialNextUp<CR>', { buffer = bufnr, desc = 'Aerial Next Up' })
+        end,
+        layout = { default_direction = 'prefer_right' },
+        show_guides = true,
+      }
+      vim.keymap.set('n', '<leader>A', '<cmd>AerialToggle!<CR>', { desc = '[A]erial Toggle' })
+    end,
   },
 }

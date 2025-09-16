@@ -16,6 +16,15 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 -- Diagnostic keymaps
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
+-- Better line navigation
+--  See `:help move`
+vim.keymap.set('n', 'j', 'gj', { desc = 'Move down by display line' })
+vim.keymap.set('n', 'k', 'gk', { desc = 'Move up by display line' })
+
+-- Quit Buffers
+-- Use <leader>d to close the current buffer
+vim.keymap.set('n', '<leader>d', ':bd<CR>', { desc = 'Delete [D] current buffer' })
+
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
 -- is not what someone will guess without a bit more experience.

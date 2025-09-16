@@ -14,6 +14,7 @@ return {
     lazy = false,
     opts = {
       notifier = { enabled = true },
+      -- explorer = { enabled = true, replace_netrw = true, auto_close = true },
     },
     keys = {
       {
@@ -23,6 +24,13 @@ return {
         end,
         desc = '[N]otifications [H]istory',
       },
+      -- {
+      --   '<leader>e',
+      --   function()
+      --     Snacks.explorer()
+      --   end,
+      --   desc = '[E]xplorer',
+      -- },
     },
   },
 }
