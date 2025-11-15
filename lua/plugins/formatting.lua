@@ -44,12 +44,13 @@ return {
         end
       end,
       formatters_by_ft = {
+        docker = { 'docker-language-server' },
         json = { 'jsonls' },
         lua = { 'stylua' },
         -- Conform can also run multiple formatters sequentially
-        python = { 'ruff' },
+        python = { 'ruff', 'black' },
         terraform = { 'terraform-ls' },
-        docker = { 'docker-language-server' },
+        yaml = { 'yamlfmt' },
         -- javascript = { "prettierd", "prettier", stop_after_first = true },
       },
     },

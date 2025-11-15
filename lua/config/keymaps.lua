@@ -20,6 +20,12 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 --  See `:help move`
 vim.keymap.set('n', 'j', 'gj', { desc = 'Move down by display line' })
 vim.keymap.set('n', 'k', 'gk', { desc = 'Move up by display line' })
+vim.keymap.set('v', 'j', 'gj', { desc = 'Move down by display line' })
+vim.keymap.set('v', 'k', 'gk', { desc = 'Move up by display line' })
+
+-- Better indentation in visual mode
+vim.keymap.set('v', '<', '<gv', { desc = 'Indent left and reselect' })
+vim.keymap.set('v', '>', '>gv', { desc = 'Indent right and reselect' })
 
 -- Quit Buffers
 -- Use <leader>d to close the current buffer

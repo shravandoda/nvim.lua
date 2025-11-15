@@ -18,7 +18,8 @@ return {
     config = function()
       require('lualine').setup {
         options = {
-          theme = 'gruvbox-material',
+          theme = 'tomorrow_night',
+          globalstatus = true,
         },
       }
     end,

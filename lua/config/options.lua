@@ -24,7 +24,7 @@ vim.g.have_nerd_font = true
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
 vim.opt.shiftwidth = 2
-vim.opt.expandtab = true
+vim.opt.expandtab = false
 
 -- Line Numbers
 vim.o.number = true
@@ -79,3 +79,6 @@ vim.o.scrolloff = 10
 -- instead raise a dialog asking if you wish to save the current file(s)
 -- See `:help 'confirm'`
 vim.o.confirm = true
+
+-- Window Borders
+vim.o.winborder = 'rounded'

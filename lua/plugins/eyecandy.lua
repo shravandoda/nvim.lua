@@ -49,36 +49,37 @@ return {
   --       commentStyle = { italic = true },
   --       keywordStyle = { bold = true },
   --       statementStyle = { bold = true },
-  --       theme = 'dragon',
+  --       theme = 'lotus',
   --       terminalColors = true,
   --       background = {
   --         dark = 'dragon',
+  --         light = 'lotus',
   --       },
   --     }
+  --     vim.o.background = 'light'
   --     vim.cmd 'colorscheme kanagawa'
   --   end,
   -- },
-  --
+
   --------------------------------------------------------------------
   --- VSCode Theme (Trying to feel at home)
   --------------------------------------------------------------------
 
-  -- {
-  --   'Mofiqul/vscode.nvim',
-  --   lazy = false,
-  --   priority = 1000,
-  --   config = function()
-  --     require('vscode').setup {
-  --       italic_comments = true,
-  --       italic_inlay_hints = true,
-  --       underline_links = true,
-  --       terminal_colors = true,
-  --     }
-  --
-  --     vim.cmd 'colorscheme vscode'
-  --   end,
-  -- },
-  -- --
+  {
+    'Mofiqul/vscode.nvim',
+    lazy = false,
+    priority = 1000,
+    config = function()
+      require('vscode').setup {
+        italic_comments = true,
+        italic_inlay_hints = true,
+        underline_links = true,
+        terminal_colors = true,
+      }
+      vim.cmd 'colorscheme vscode'
+    end,
+  },
+
   --------------------------------------------------------------------
   --- Catppuccin Theme
   --------------------------------------------------------------------
@@ -88,10 +89,27 @@ return {
   --   priority = 1000,
   --   config = function()
   --     require('catppuccin').setup {
-  --       flavor = 'mocha',
+  --       flavor = 'macchiato',
   --       background = {
   --         light = 'latte',
-  --         dark = 'mocha',
+  --         dark = 'macchiato',
+  --       },
+  --       float = {
+  --         transparency = true,
+  --       },
+  --       styles = { -- Handles the styles of general hi groups (see `:h highlight-args`):
+  --         comments = { 'italic' }, -- Change the style of comments
+  --         conditionals = { 'italic' },
+  --         loops = {},
+  --         functions = { 'italic' },
+  --         keywords = {},
+  --         strings = {},
+  --         variables = {},
+  --         numbers = {},
+  --         booleans = {},
+  --         properties = {},
+  --         types = {},
+  --         operators = {},
   --       },
   --       show_end_of_buffer = true,
   --       term_colors = true,
@@ -105,10 +123,11 @@ return {
   --         },
   --       },
   --     }
+  --     vim.o.background = 'light'
   --     vim.cmd.colorscheme 'catppuccin'
   --   end,
   -- },
-  --
+
   --
   --
   --------------------------------------------------------------------
@@ -125,6 +144,7 @@ return {
   --       comments = true,
   --       functions = true,
   --     }
+  --     vim.o.background = 'light'
   --     vim.cmd.colorscheme 'ayu'
   --   end,
   -- },
@@ -132,24 +152,24 @@ return {
   -------------------------------------------------------------------
   --- Gruvbox Material Theme
   -------------------------------------------------------------------
-  {
-    'sainnhe/gruvbox-material',
-    lazy = false,
-    priority = 1000,
-    config = function()
-      vim.g.gruvbox_material_background = 'medium'
-      vim.g.gruvbox_material_foreground = 'mix'
-      vim.g.gruvbox_material_transparent_background = 1
-      vim.g.gruvbox_material_better_performance = 1
-      vim.g.gruvbox_material_enable_bold = 1
-      vim.g.gruvbox_material_enable_italic = 1
-      vim.g.gruvbox_material_cursor = 'red'
-      vim.g.gruvbox_material_ui_contrast = 'high'
-
-      vim.cmd.colorscheme 'gruvbox-material'
-    end,
-  },
-
+  -- {
+  --   'sainnhe/gruvbox-material',
+  --   lazy = false,
+  --   priority = 1000,
+  --   config = function()
+  --     vim.g.gruvbox_material_background = 'medium'
+  --     vim.g.gruvbox_material_foreground = 'mix'
+  --     vim.g.gruvbox_material_transparent_background = 0
+  --     vim.g.gruvbox_material_better_performance = 1
+  --     vim.g.gruvbox_material_enable_bold = 1
+  --     vim.g.gruvbox_material_enable_italic = 1
+  --     vim.g.gruvbox_material_cursor = 'red'
+  --     vim.g.gruvbox_material_ui_contrast = 'high'
+  --
+  --     vim.cmd.colorscheme 'gruvbox-material'
+  --   end,
+  -- },
+  --
   --------------------------------------------------------------------
   -- Highlight todo, notes, etc in comments
   --------------------------------------------------------------------
@@ -165,7 +185,7 @@ return {
 
       config = function()
         require('no-neck-pain').setup {
-          width = 170,
+          width = 180,
           autocmds = {
             enableOnVimEnter = true,
           },
